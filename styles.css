@@ -957,3 +957,218 @@ footer {
 }
 
 
+
+
+
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust container padding */
+    .container {
+        padding: 15px;
+    }
+
+    /* Header adjustments */
+    header .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative; /* Für die Navbar */
+        padding: 15px 20px; /* Platz hinzufügen */
+    }
+
+    header .logo {
+        max-height: 50px; /* Anpassbare Größe */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Navigation */
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 999; /* Sicherstellen, dass die Navbar oben liegt */
+    }
+
+    /* Erweiterte Navbar anzeigen */
+    #nav-toggle:checked ~ nav {
+        max-height: 500px; /* Passe diesen Wert nach Bedarf an */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        display: block; /* Sicherstellen, dass die Liste angezeigt wird */
+    }
+
+    header nav ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Hamburger Menu */
+    .nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .nav-toggle-label span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: #333;
+        transition: all 0.3s ease;
+    }
+
+    /* Hamburger Animation */
+    #nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Reduce heading sizes */
+    h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    /* Grid adjustments */
+    .leistungen-grid,
+    .über-uns-grid,
+    .use-case-grid,
+    .highlights {
+        grid-template-columns: 1fr;
+    }
+
+    /* Card adjustments */
+    details.leistung {
+        min-height: auto;
+        padding: 15px;
+    }
+
+    /* Reduce font sizes */
+    p,
+    .btn,
+    .kontakt button,
+    .cta-button,
+    .details-text a {
+        font-size: 16px;
+    }
+
+    /* Form elements */
+    .kontakt form {
+        padding: 15px;
+    }
+
+    /* Process steps */
+    .prozess-schritt {
+        padding: 1em;
+    }
+
+    /* Footer adjustments */
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Specific section padding */
+    .leistungen,
+    .über-uns,
+    .cta-vorgehen,
+    .kontakt,
+    .use-cases,
+    .webanwendungen,
+    .impressum,
+    .datenschutz {
+        padding: 30px 15px;
+        margin: 30px auto;
+    }
+
+    /* Button sizing */
+    .btn,
+    .kontakt button,
+    .cta-button,
+    .details-text a {
+        padding: 8px 16px;
+        width: 100%;
+    }
+
+    /* Hide desktop-specific elements */
+    .desktop-only {
+        display: none;
+    }
+
+    /* Show mobile-specific elements */
+    .mobile-only {
+        display: block;
+    }
+}
+
+/* Weitere Anpassungen für sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero {
+        padding: 40px 10px;
+    }
+
+    /* Reduce all section paddings */
+    .leistungen,
+    .über-uns,
+    .cta-vorgehen,
+    .kontakt,
+    .use-cases,
+    .webanwendungen,
+    .impressum,
+    .datenschutz {
+        padding: 25px 10px;
+        margin: 25px auto;
+    }
+
+    /* Adjust grid gaps */
+    .leistungen-grid,
+    .über-uns-grid,
+    .use-case-grid,
+    .highlights {
+        gap: 15px;
+    }
+}
+.nav-toggle {
+    display: none;
+}
+
